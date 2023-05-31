@@ -1,8 +1,10 @@
 # Collaborative Component Template
 
-This template enables multiple people to collaborate on [building BOS components](https://docs.near.org/bos/home) by automatically deploying the components in the `./src` folder when somebody `push` to `master`.
+This template enables multiple people to collaborate on [building BOS components](https://docs.near.org/bos/home) by automatically deploying the components in the `./src` folder when somebody `push` to `main`.
 
-The template leverages [NEAR Access Keys](https://docs.near.org/concepts/basics/accounts/access-keys), using keys that allow to only access the `set` method of `social.near`. Follow the steps bellow to create the necessary Access Key, and setup your repository's Actions.
+The template leverages [NEAR Access Keys](https://docs.near.org/concepts/basics/accounts/access-keys), using keys that allow to only access the `set` method of `social.near`. 
+
+Fork the repository and follow the steps bellow to create the necessary Access Key, and setup your repository's Actions.
 
 <br />
 
@@ -64,6 +66,11 @@ variable NEAR_SOCIAL_ACCOUNT_PUBLIC_KEY = "ed25519:public_key"
 
 <br />
 
+### 5. Enable Actions
+Go to the `Actions` tabs, and enable the Workflows. Now, when somebody `push` or `merge` into `main` the components in the `./src` folder will be automatically deployed to `account.near`.
+
+<br />
+
 ---
 
 ## External Resources
@@ -72,3 +79,4 @@ Check these useful resources to help you build NEAR components.
 
 - [How to Build BOS Components](https://docs.near.org/bos/home)
 - [BOS VS Extension](https://marketplace.visualstudio.com/items?itemName=near-protocol.near-discovery-ide)
+- [Working Example](https://github.com/near-examples/bos-commerce-components)
