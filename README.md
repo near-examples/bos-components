@@ -1,6 +1,6 @@
 # Collaborative Component Template
 
-This template enables multiple people to collaborate on [building BOS components](https://docs.near.org/bos/home) by automatically deploying the components in the `./src` folder when somebody `push` to `master`.
+This template enables multiple people to collaborate on [building BOS components](https://docs.near.org/bos/home) by automatically deploying the components in the `./src` folder when somebody `push` to `main`.
 
 The template leverages [NEAR Access Keys](https://docs.near.org/concepts/basics/accounts/access-keys), using keys that allow to only access the `set` method of `social.near`. Follow the steps bellow to create the necessary Access Key, and setup your repository's Actions.
 
