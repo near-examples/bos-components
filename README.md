@@ -30,7 +30,7 @@ Here is how you can add the key to `account.near`. Notice the `--contract-id` pa
 
 ```bash
 # Add a function call key with a 1N allowance
-near add-key account.near ed25519:public_key --contract-id social.near --allowance 1
+near add-key account.near ed25519:public_key --contract-id social.near --allowance 1 --method-names set
 ```
 
 > Login first if necessary using the command `near login` 
