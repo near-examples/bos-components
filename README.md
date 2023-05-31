@@ -57,3 +57,12 @@ variable NEAR_SOCIAL_ACCOUNT_PUBLIC_KEY = "ed25519:public_key"
 ```
 
 > Remember to change `account.near` to your own NEAR Account
+
+---
+
+## External Resources
+
+Check this useful resources to help you build NEAR components.
+
+- [How to Build BOS Components](https://docs.near.org/bos/home)
+- [BOS VS Extension](https://marketplace.visualstudio.com/items?itemName=near-protocol.near-discovery-ide)
