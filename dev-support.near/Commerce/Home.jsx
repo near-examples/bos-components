@@ -1,24 +1,60 @@
-const product = {
-  title: "A simple product",
-  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce euismod magna et sapien varius, ut ultrices lacus aliquet.",
-  link: "#",
-  price: "1",
-  img: "https://docs.near.org/assets/images/protocol-b73c2a3ace3307226ee7eb2149ee432f.png"
-}
+const products = Near.view("commerce.dev-support.near", "get_items");
 
-const products = [product, product, product, product]
+const thisUserProducts = products.filter(product => product.owner_id === context.accountId);
+const otherProductsForSale = products.filter(product => product.owner_id !== context.accountId && product.status === "FORSALE");
+const otherProductsSold = products.filter(product => product.owner_id !== context.accountId && product.status === "SOLD");
 
 return <>
   <div class="row">
-    {products.map(product => (
-      <>
+    <div>
+      <h2>Your Items</h2>
+      {products.map(product => (
         <div class="col-6">
           <Widget
             src="dev-support.near/widget/Commerce.Product.Preview"
-            props={{ ...product }}
+            props={{
+              title: product.name,
+              text: product.description,
+              price: product.price,
+              img: product.image
+            }}
           />
         </div>
-      </>
-    ))}
+      ))}
+    </div>
+    
+    <div>
+      <h2>Items For Sale</h2>
+      {otherProductsForSale.map(product => (
+        <div class="col-6">
+          <Widget
+            src="dev-support.near/widget/Commerce.Product.Preview"
+            props={{
+              title: product.name,
+              text: product.description,
+              price: product.price,
+              img: product.image
+            }}
+          />
+        </div>
+      ))}
+    </div>
+    
+    <div>
+      <h2>Sold Items</h2>
+      {otherProductsSold.map(product => (
+        <div class="col-6">
+          <Widget
+            src="dev-support.near/widget/Commerce.Product.Preview"
+            props={{
+              title: product.name,
+              text: product.description,
+              price: product.price,
+              img: product.image
+            }}
+          />
+        </div>
+      ))}
+    </div>
   </div>
 </>
