@@ -8,7 +8,7 @@ return <>
   <div class="row">
     <div>
       <h2>Your Items</h2>
-      {products.map(product => (
+      {thisUserProducts.map(product => (
         <div class="col-6">
           <Widget
             src="dev-support.near/widget/Commerce.Product.Preview"
